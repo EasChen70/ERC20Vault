@@ -10,4 +10,18 @@ contract Vault{
         token = IERC20(_token);
     }
 
+    function mint(address _to, uint _amount) private{
+        totalSupply += _amount;
+        balanceOf[_to] += _amount;
+    }
+
+    function burn(address _from, uint _amount) private{
+        totalSupply -= _amount;
+        balanceOf[_from] -= _amount;
+    }
+
+    function deposit(uint _amount) external{
+        
+    }
+
 }
